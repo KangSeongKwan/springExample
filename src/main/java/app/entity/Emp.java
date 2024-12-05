@@ -1,5 +1,6 @@
 package app.entity;
 
+import java.time.LocalDate;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -43,4 +44,16 @@ public class Emp {
 
     @Column(name = "DEPTNO")
     private int deptno;
+  
+  	@Builder
+	  public Emp(int empno, String ename, String job, Integer mgr, LocalDate hiredate, Double sal, Double comm, Dept dept) {
+      this.empno = empno;
+      this.ename = ename;
+      this.job = job;
+      this.mgr = mgr;
+      this.hiredate = hiredate;
+      this.sal = sal;
+      this.comm = comm;
+      this.dept = dept;
+	  }
 }
