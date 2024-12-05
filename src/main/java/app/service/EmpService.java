@@ -1,5 +1,6 @@
 package app.service;
 
+<<<<<<< HEAD
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import app.entity.Emp;
@@ -28,4 +29,29 @@ public class EmpService {
             return null; // 직원이 없다면 null 반환
         }
     }
+=======
+import java.util.List;
+
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
+import app.entity.Dept;
+import app.entity.Emp;
+import app.repository.EmpRepository;
+import jakarta.persistence.EntityNotFoundException;
+import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
+@Service
+
+public class EmpService {
+
+	private final EmpRepository EmpRepository;
+	
+	@Transactional
+	public Emp registerEmp(Emp newEmp) {
+		return EmpRepository.save(newEmp);
+	}
+>>>>>>> 94d353515910663cbee6dfed94c7eddb213eee2b
 }
