@@ -17,7 +17,7 @@ import lombok.RequiredArgsConstructor;
 
 public class EmpService {
 
-	private final EmpRepository EmpRepository;
+	private final EmpRepository empRepository;
 
 	
 	// 특정 사원 정보 조회
@@ -29,7 +29,7 @@ public class EmpService {
 	// 사원 생성
 	@Transactional
 	public Emp registerEmp(Emp newEmp) {
-		return EmpRepository.save(newEmp);
+		return empRepository.save(newEmp);
 	}
 
 	// 사원 수정

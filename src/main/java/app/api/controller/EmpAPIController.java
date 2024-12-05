@@ -3,6 +3,7 @@ package app.api.controller;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,15 +15,17 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 import app.service.EmpService;
+import jakarta.persistence.EntityNotFoundException;
 import app.entity.Emp;
 import app.repository.EmpRepository;
 import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor
+
 @RestController
 @RequestMapping("/api")
 public class EmpAPIController {
     private final EmpService empService;
+    private final EmpRepository empRepository;
 
     // 사원 전체 조회
 	@GetMapping("/emps")
