@@ -1,11 +1,7 @@
 package app.service;
 
-import java.util.List;
-
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import app.entity.Dept;
 import app.entity.Emp;
 import app.repository.EmpRepository;
 import jakarta.persistence.EntityNotFoundException;
@@ -18,7 +14,7 @@ import lombok.RequiredArgsConstructor;
 public class EmpService {
 
 	private final EmpRepository empRepository;
-
+	
 	
 	// 특정 사원 정보 조회
 	@Transactional

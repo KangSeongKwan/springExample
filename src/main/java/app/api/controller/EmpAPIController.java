@@ -20,7 +20,7 @@ import app.entity.Emp;
 import app.repository.EmpRepository;
 import lombok.RequiredArgsConstructor;
 
-
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/api")
 public class EmpAPIController {
@@ -51,7 +51,7 @@ public class EmpAPIController {
 	  public Emp registerEmp(@RequestBody Emp newEmp) {
 		      Emp emp = empService.registerEmp(newEmp);
 		      return emp;
-	      }
+	      
     }
 
     // 사원 정보 수정

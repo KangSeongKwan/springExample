@@ -5,7 +5,6 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,7 +12,6 @@ import lombok.Setter;
 import lombok.ToString;
 
 @NoArgsConstructor
-@AllArgsConstructor
 @Setter
 @Getter
 @ToString
@@ -35,19 +33,19 @@ public class Emp {
     private Integer mgr;
 
     @Column(name = "HIREDATE")
-    private String hiredate;
+    private LocalDate hiredate;
 
     @Column(name = "SAL")
-    private double sal;
+    private Double sal;
 
     @Column(name = "COMM")
-    private double comm;
+    private Double comm;
 
     @Column(name = "DEPTNO")
     private int deptno;
   
   	@Builder
-	  public Emp(int empno, String ename, String job, Integer mgr, LocalDate hiredate, Double sal, Double comm, Dept dept) {
+	  public Emp(int empno, String ename, String job, Integer mgr, LocalDate hiredate, Double sal, Double comm, int deptno) {
       this.empno = empno;
       this.ename = ename;
       this.job = job;
@@ -55,6 +53,6 @@ public class Emp {
       this.hiredate = hiredate;
       this.sal = sal;
       this.comm = comm;
-      this.dept = dept;
+      this.deptno = deptno;
 	  }
 }
