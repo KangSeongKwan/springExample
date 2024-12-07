@@ -4,6 +4,9 @@ HELP.md
 !**/src/test/**/target/
 target/
 
+## properties
+*.properties
+
 ### STS ###
 .apt_generated
 .classpath
